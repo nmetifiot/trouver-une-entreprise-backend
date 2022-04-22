@@ -1,5 +1,4 @@
 const axios = require('axios');
-const { status } = require('express/lib/response');
 const getToken = require('../outils/auth');
 
 /**
@@ -10,7 +9,7 @@ const getToken = require('../outils/auth');
  */
 exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
 
-    tokenUsed = await getToken();
+    tokenUsed = await getToken('api_labonneboitev1');
     isRequestOk = true;
     messageErreur = {};
 

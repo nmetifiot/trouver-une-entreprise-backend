@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 
-getToken = async function () {
+getToken = async function (scope) {
 
     var postData = {
     };
@@ -15,7 +15,7 @@ getToken = async function () {
             client_id: 'PAR_trouveruneentreprise_3ad05c342b367ae9ce78558d8958c2d40191675b689375cc0d7197df37453ecd',
             client_secret: '11e2a304f4292a833985d8e5d9fcd299b693668d10cd08edb421dd7b70a8edb7',
             grant_type: 'client_credentials',
-            scope: 'api_labonneboitev1'
+            scope: scope
         }
     };
     try {

@@ -2,6 +2,7 @@ const express = require('express');
 
 const bonneBoiteRoutes = require('./routes/bonneBoite');
 const codeMetiersRomes = require('./routes/romes');
+const codesInsee = require('./routes/insee');
 const app = express();
 
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
 
 app.use('/api/bonneBoite', bonneBoiteRoutes);
 app.use('/api/codesMetiersRomes', codeMetiersRomes);
+app.use('/api/codesInsee', codesInsee);
 
 
 module.exports = app;

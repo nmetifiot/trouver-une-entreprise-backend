@@ -1,4 +1,5 @@
 const axios = require('axios');
+const { type } = require('express/lib/response');
 const getToken = require('../outils/auth');
 
 exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
@@ -16,6 +17,8 @@ exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
         isRequestOk = false;
     };
 
+    const page = (req.query.page != null) ? req.query.page : 1;
+
 
     if (isRequestOk) {
         try {
@@ -23,7 +26,8 @@ exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
             reponse = await axios.get('https://api.emploi-store.fr/partenaire/labonneboite/v1/company/', {
                 params: {
                     commune_id: req.query.codeInsee,
-                    rome_codes: req.query.codeRome
+                    rome_codes: req.query.codeRome,
+                    page: page
                 },
                 headers: {
                     Authorization: `Bearer ${tokenUsed}`

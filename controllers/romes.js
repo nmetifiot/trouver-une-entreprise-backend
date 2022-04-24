@@ -23,7 +23,4 @@ exports.getCodeMetiersRomes = async (req, res, next) => {
             message: error
         })
     };
-
-
-
 };

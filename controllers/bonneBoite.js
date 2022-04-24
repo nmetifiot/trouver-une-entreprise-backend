@@ -1,12 +1,6 @@
 const axios = require('axios');
 const getToken = require('../outils/auth');
 
-/**
- * 
- * @param {*} req - requête 
- * @param {*} res - réponse
- * @param {*} next - passe à la prochaine fonction
- */
 exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
 
     tokenUsed = await getToken('api_labonneboitev1');

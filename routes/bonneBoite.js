@@ -19,6 +19,14 @@ const controllerbonneBoite = require('../controllers/bonneBoite');
  *         in: query
  *         type: string
  *         description: Code Rome du métier recherché
+ *       - name: page
+ *         in: query
+ *         type: string
+ *         description: Numero de la page de recherche
+ *       - name: rayon
+ *         in: query
+ *         type: numérique
+ *         description: Rayon de recherche par rapport à la commune déclarée
  *     responses:
  *          '200':
  *              description: OK

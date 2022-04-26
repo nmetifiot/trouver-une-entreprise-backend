@@ -18,6 +18,7 @@ exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
     };
 
     const page = (req.query.page != null) ? req.query.page : 1;
+    const rayon = (req.query.rayon != null) ? req.query.rayon : 10;
 
 
     if (isRequestOk) {
@@ -27,7 +28,8 @@ exports.getEntrepriseCodeInseeCodeRome = async (req, res, next) => {
                 params: {
                     commune_id: req.query.codeInsee,
                     rome_codes: req.query.codeRome,
-                    page: page
+                    page: page,
+                    distance: rayon
                 },
                 headers: {
                     Authorization: `Bearer ${tokenUsed}`
